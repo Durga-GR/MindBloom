@@ -1,0 +1,914 @@
+/* ================================================
+   MINDBLOOM — MENTAL HEALTH & THERAPY CENTER
+   Simple, clean CSS — easy to read and explain
+   ================================================ */
+
+
+/* ------------------------------------------------
+   1. CSS VARIABLES (Custom Properties)
+   Define colors and fonts in one place
+------------------------------------------------ */
+:root {
+  --green-dark:   #2d6a4f;   /* dark green — buttons, headings */
+  --green-mid:    #52a872;   /* medium green — accents */
+  --green-light:  #e8f5eb;   /* light green — backgrounds */
+  --cream:        #faf8f4;   /* warm white — page background */
+  --white:        #ffffff;
+  --text-dark:    #1e2d26;   /* main text color */
+  --text-muted:   #6b7c72;   /* secondary text */
+  --border:       #d4e8d8;   /* borders */
+
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body:    'Poppins', sans-serif;
+}
+
+
+/* ------------------------------------------------
+   2. RESET & BASE STYLES
+   Remove default browser spacing, set defaults
+------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scroll when clicking nav links */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ------------------------------------------------
+   3. REUSABLE UTILITY CLASSES
+------------------------------------------------ */
+
+/* Container — centers content with max width */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section padding — consistent spacing */
+.services,
+.about,
+.therapists,
+.contact {
+  padding: 80px 0;
+}
+
+/* Section heading block */
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem); /* fluid font size */
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+h2 em {
+  font-style: italic;
+  color: var(--green-mid);
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+
+/* ------------------------------------------------
+   4. BUTTONS
+------------------------------------------------ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--green-dark);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #1e4d38;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: var(--green-light);
+  color: var(--green-dark);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--border);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #d4ead7;
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  font-size: 1rem;
+}
+
+/* Nav CTA button */
+.btn-nav {
+  background-color: var(--green-dark);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-nav:hover {
+  background-color: #1e4d38;
+}
+
+
+/* ------------------------------------------------
+   5. HEADER
+------------------------------------------------ */
+.header {
+  position: fixed;           /* stays at top while scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Header background appears on scroll (added by JS) */
+.header.scrolled {
+  background-color: rgba(250, 248, 244, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;                    /* Flexbox layout */
+  align-items: center;
+  justify-content: space-between;   /* logo left, nav right */
+  height: 70px;
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Nav links — flex row */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--green-dark);
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+}
+
+/* Mobile navigation menu — hidden by default */
+.mobile-nav {
+  display: none;
+  background-color: var(--cream);
+  border-top: 1px solid var(--border);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* Class added by JS to show mobile menu */
+.mobile-nav.open {
+  max-height: 300px;
+  padding: 20px 24px 28px;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobile-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+
+/* ------------------------------------------------
+   6. HERO SECTION
+------------------------------------------------ */
+.hero {
+  background-color: var(--cream);
+  padding: 140px 0 80px; /* top padding accounts for fixed header */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero layout — two columns using Flexbox */
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1; /* takes up remaining space */
+}
+
+.hero-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: 16px;
+}
+
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  font-style: italic;
+  color: var(--green-mid);
+}
+
+.hero-para {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* Hero buttons row */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+/* Trust points row */
+.trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Hero stats card */
+.hero-card {
+  background-color: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 28px;
+  width: 280px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 32px rgba(45, 106, 79, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.stat-item h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  line-height: 1;
+}
+
+.stat-item p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border);
+  margin: 12px 0;
+}
+
+.card-quote {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.card-quote p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.card-quote span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+
+/* ------------------------------------------------
+   7. SERVICES SECTION
+------------------------------------------------ */
+.services {
+  background-color: var(--green-light);
+}
+
+/* CSS Grid — 3 columns on desktop */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background-color: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.12);
+}
+
+/* Highlighted card — dark green */
+.service-card.highlight {
+  background-color: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--white);
+}
+
+.service-card.highlight p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+
+/* ------------------------------------------------
+   8. ABOUT SECTION
+------------------------------------------------ */
+.about {
+  background-color: var(--cream);
+}
+
+/* About layout — two columns using Flexbox */
+.about-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.about-text .section-tag {
+  text-align: left;
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.about-text .btn-primary {
+  margin-top: 8px;
+}
+
+/* About stats — CSS Grid 2x2 */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.about-stat {
+  background-color: var(--green-light);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-stat h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  line-height: 1;
+}
+
+.about-stat p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+
+/* ------------------------------------------------
+   9. THERAPISTS SECTION
+------------------------------------------------ */
+.therapists {
+  background-color: var(--green-light);
+}
+
+/* CSS Grid — 3 equal columns */
+.therapists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.therapist-card {
+  background-color: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.therapist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.12);
+}
+
+/* Colored avatar block at top of card */
+.therapist-avatar {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+.therapist-avatar.green { background-color: #d4ead7; }
+.therapist-avatar.blue  { background-color: #dce8f5; }
+.therapist-avatar.peach { background-color: #f5e8d4; }
+
+.therapist-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 16px 4px;
+}
+
+.therapist-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 16px;
+}
+
+.therapist-spec {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 6px 16px;
+}
+
+.therapist-stars {
+  font-size: 0.85rem;
+  color: #f0b429;
+  padding: 0 16px 20px;
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------
+   10. CONTACT / BOOKING SECTION
+------------------------------------------------ */
+.contact {
+  background-color: var(--cream);
+}
+
+/* Contact layout — two columns using Flexbox */
+.contact-inner {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-text .section-tag { text-align: left; }
+.contact-text h2 { text-align: left; margin-bottom: 16px; }
+
+.contact-text p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Booking form */
+.contact-form {
+  flex: 1;
+  background-color: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 8px 32px rgba(45, 106, 79, 0.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  background-color: var(--cream);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--green-mid);
+}
+
+.form-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+
+/* ------------------------------------------------
+   11. FOOTER
+------------------------------------------------ */
+.footer {
+  background-color: #1e2d26; /* dark green */
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 48px;
+  padding: 60px 0 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  flex: 2;
+}
+
+.footer-brand .logo {
+  color: var(--white);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 260px;
+  margin-bottom: 20px;
+}
+
+/* Social links row */
+.social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 50px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--white);
+  background-color: rgba(106, 171, 122, 0.25);
+  border-color: rgba(106, 171, 122, 0.5);
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Crisis helpline bar */
+.crisis-bar {
+  background-color: #162318;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.crisis-bar p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.crisis-bar strong {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ------------------------------------------------
+   12. MEDIA QUERIES — Responsive Design
+   Breakpoints: tablet (768px) and mobile (480px)
+------------------------------------------------ */
+
+/* --- TABLET (screen width 768px and below) --- */
+@media (max-width: 768px) {
+
+  /* Hide desktop nav, show hamburger */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero — stack columns vertically */
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+  /* Services — 2 columns on tablet */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About — stack columns vertically */
+  .about-inner {
+    flex-direction: column;
+  }
+
+  .about-stats {
+    width: 100%;
+  }
+
+  /* Therapists — 2 columns on tablet */
+  .therapists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact — stack columns vertically */
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  /* Footer — stack columns vertically */
+  .footer-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+
+/* --- MOBILE (screen width 480px and below) --- */
+@media (max-width: 480px) {
+
+  /* Services — single column on mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Therapists — single column on mobile */
+  .therapists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About stats — single column on mobile */
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Hero buttons — stack vertically */
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Trust points — stack vertically */
+  .trust-points {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}

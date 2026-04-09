@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindBloom - Mental Health & Therapy</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ================================
+       HEADER - Logo + Navigation
+  ================================ -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="#" class="logo">🌿 MindBloom</a>
+
+        <!-- Navigation Links -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#therapists">Therapists</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="btn-nav">Book Session</a></li>
+          </ul>
+
+          <!-- Hamburger icon for mobile -->
+          <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#therapists" onclick="toggleMenu()">Therapists</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ================================
+       HERO SECTION
+  ================================ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <p class="hero-tag">🌿 Professional Mental Health Care</p>
+          <h1>You Deserve To Feel <span>Whole Again</span></h1>
+          <p class="hero-para">
+            MindBloom connects you with licensed, compassionate therapists
+            who truly listen. Whether it's anxiety, grief, or everyday stress
+            — we are here for you, gently.
+          </p>
+
+          <!-- Call To Action Buttons -->
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Book Free Consultation</a>
+            <a href="#services" class="btn-secondary">Our Services</a>
+          </div>
+
+          <!-- Trust Points -->
+          <div class="trust-points">
+            <span>✓ Licensed Therapists</span>
+            <span>✓ 100% Confidential</span>
+            <span>✓ Same Week Appointments</span>
+          </div>
+        </div>
+
+        <!-- Hero Stats Card -->
+        <div class="hero-card">
+          <div class="stat-item">
+            <h3>2,400+</h3>
+            <p>Clients Helped</p>
+          </div>
+          <div class="divider"></div>
+          <div class="stat-item">
+            <h3>98%</h3>
+            <p>Satisfaction Rate</p>
+          </div>
+          <div class="divider"></div>
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p>Expert Therapists</p>
+          </div>
+          <div class="card-quote">
+            <p>"For the first time, I finally feel heard."</p>
+            <span>— Priya, Client</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       SERVICES SECTION
+  ================================ -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <!-- Section Heading -->
+      <div class="section-heading">
+        <p class="section-tag">What We Offer</p>
+        <h2>Care Shaped <em>Around You</em></h2>
+        <p class="section-sub">Every mind is different. We offer a wide range of therapy services.</p>
+      </div>
+
+      <!-- Services Cards Grid -->
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🧠</div>
+          <h3>Anxiety & Stress</h3>
+          <p>Tools and support to quiet the noise and reclaim your calm day by day.</p>
+        </div>
+
+        <div class="service-card highlight">
+          <div class="service-icon">💬</div>
+          <h3>Individual Therapy</h3>
+          <p>One-on-one sessions with a licensed therapist — in person or online.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💑</div>
+          <h3>Couples Therapy</h3>
+          <p>Rebuild trust and improve communication together with guided support.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌙</div>
+          <h3>Grief & Loss</h3>
+          <p>A gentle space to process loss at your own pace without any judgment.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧒</div>
+          <h3>Child & Teen Therapy</h3>
+          <p>Specialists who understand younger minds and growing, changing hearts.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Mindfulness & CBT</h3>
+          <p>Evidence-based techniques blended with mindfulness for lasting change.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       ABOUT SECTION
+  ================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+
+        <!-- About Text -->
+        <div class="about-text">
+          <p class="section-tag">About MindBloom</p>
+          <h2>A Safe Space <em>For Every Mind</em></h2>
+          <p>
+            Founded in 2020, MindBloom is a mental health center based in
+            Salem, Tamil Nadu. We believe that every person deserves access
+            to compassionate, professional mental health support.
+          </p>
+          <p>
+            Our team of licensed therapists brings warmth, expertise, and
+            genuine care to every single session. No judgment, no pressure —
+            just a safe space to be yourself.
+          </p>
+          <a href="#contact" class="btn-primary">Start Your Journey</a>
+        </div>
+
+        <!-- About Stats -->
+        <div class="about-stats">
+          <div class="about-stat">
+            <h3>150+</h3>
+            <p>Sessions per month</p>
+          </div>
+          <div class="about-stat">
+            <h3>4 Years</h3>
+            <p>Of trusted care</p>
+          </div>
+          <div class="about-stat">
+            <h3>15+</h3>
+            <p>Licensed therapists</p>
+          </div>
+          <div class="about-stat">
+            <h3>5 ★</h3>
+            <p>Average rating</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       THERAPISTS SECTION
+  ================================ -->
+  <section class="therapists" id="therapists">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="section-tag">Our Team</p>
+        <h2>Meet The People <em>Who Care</em></h2>
+      </div>
+
+      <div class="therapists-grid">
+
+        <div class="therapist-card">
+          <div class="therapist-avatar green">Dr. Ananya</div>
+          <h3>Dr. Ananya Sharma</h3>
+          <p class="therapist-role">Clinical Psychologist</p>
+          <p class="therapist-spec">Anxiety · Depression · CBT</p>
+          <p class="therapist-stars">★★★★★ 4.9</p>
+        </div>
+
+        <div class="therapist-card">
+          <div class="therapist-avatar blue">Dr. Ravi</div>
+          <h3>Dr. Ravi Menon</h3>
+          <p class="therapist-role">Marriage & Family Therapist</p>
+          <p class="therapist-spec">Couples · Grief · Trauma</p>
+          <p class="therapist-stars">★★★★★ 4.8</p>
+        </div>
+
+        <div class="therapist-card">
+          <div class="therapist-avatar peach">Ms. Leela</div>
+          <h3>Ms. Leela Krishnan</h3>
+          <p class="therapist-role">Child & Adolescent Therapist</p>
+          <p class="therapist-spec">Teens · ADHD · Self-esteem</p>
+          <p class="therapist-stars">★★★★★ 5.0</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       CONTACT / BOOKING SECTION
+  ================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+
+        <!-- Contact Text -->
+        <div class="contact-text">
+          <p class="section-tag">Get In Touch</p>
+          <h2>You Don't Have To <em>Do This Alone</em></h2>
+          <p>
+            Book a free 15-minute consultation. No commitment,
+            no pressure — just a gentle conversation to start.
+          </p>
+          <div class="contact-info">
+            <p>📍 12 Wellness Lane, Salem, Tamil Nadu</p>
+            <p>📞 +91 98400 00000</p>
+            <p>✉️ hello@mindbloom.in</p>
+            <p>🕐 Mon–Sat, 9am – 7pm</p>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="e.g. Priya" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 98400 00000" />
+          </div>
+          <div class="form-group">
+            <label for="concern">What brings you here?</label>
+            <select id="concern">
+              <option value="">Select a concern...</option>
+              <option>Anxiety or Stress</option>
+              <option>Depression</option>
+              <option>Relationship Issues</option>
+              <option>Grief or Loss</option>
+              <option>Just want to talk</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            Book Free Consultation 🌱
+          </button>
+          <p class="form-note">🔒 100% confidential. We never share your details.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       FOOTER
+  ================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- Footer Brand -->
+        <div class="footer-brand">
+          <a href="#" class="logo">🌿 MindBloom</a>
+          <p>Compassionate mental health care for every chapter of your life.</p>
+
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Individual Therapy</a></li>
+            <li><a href="#services">Couples Therapy</a></li>
+            <li><a href="#services">Child & Teen</a></li>
+            <li><a href="#services">Grief Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#therapists">Our Therapists</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 MindBloom Therapy Center. All rights reserved.</p>
+        <p>Made with 💚 in Salem, Tamil Nadu</p>
+      </div>
+
+    </div>
+
+    <!-- Crisis Helpline Bar -->
+    <div class="crisis-bar">
+      <p>🆘 In crisis? Call <strong>iCall: 9152987821</strong> or <strong>Vandrevala Foundation: 1860-2662-345</strong> — Free, 24/7</p>
+    </div>
+
+  </footer>
+
+
+  <!-- ================================
+       JAVASCRIPT - Simple & Explained
+  ================================ -->
+  <script>
+
+    /* 1. Sticky header — adds shadow when user scrolls */
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    /* 2. Hamburger menu toggle for mobile */
+    function toggleMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('open');
+    }
+
+    /* 3. Booking form submit handler */
+    function handleSubmit(event) {
+      event.preventDefault(); /* stops page from reloading */
+      alert('Thank you! 🌿 We will contact you within 24 hours to confirm your session.');
+      event.target.reset(); /* clears the form */
+    }
+
+  </script>
+
+</body>
+</html>
