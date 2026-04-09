@@ -43,6 +43,11 @@ Open the index.html file in any web browser.
 
 ## 📸 Output
 
+![Dashboard](Dashboard.png)
+![Services](service.png)
+![About](About.png)
+![Therapists](Therapists.png)
+![Contact](Contact.png)
 
 ## 📚 What I Learned
 
