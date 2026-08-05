@@ -57,4 +57,4 @@ Open the index.html file in any web browser.
 * GitHub usage
 
 ---
-ealth Website
+health Website
